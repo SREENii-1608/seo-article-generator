@@ -16,10 +16,9 @@ class ArticleGenerator:
     
     def __init__(self):
         # API key should be set as environment variable
-        self.client = anthropic.Anthropic(
-            api_key=os.environ.get("ANTHROPIC_API_KEY")
-        )
-    
+import google.generativeai as genai
+genai.configure(api_key=...)
+self.model = genai.GenerativeModel('gemini-pro')
     def generate_article(
         self, 
         topic: str, 
